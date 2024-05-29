@@ -1,6 +1,9 @@
 # from pkg import app
 from pkg.main import bp
 from flask import render_template
+from logging import getLogger
+
+logger = getLogger(__name__)
 
 @bp.route('/')
 def index():
