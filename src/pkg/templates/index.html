@@ -3,6 +3,7 @@
     Index Title
 {% endblock %}
 {% block content %}
-    <p>This is index.  There are links to bp_1's index in both the base template's navbar above and in the body of this file below.</p>
+    <p>This is the 'main' blueprint's index.  There are links to the 'bp_1' blueprint's index in this blueprint's base
+        template's navbar above and in the body of this file below.</p>
     <a href="{{ url_for('bp_1.index') }}">bp_1 index</a>
 {% endblock %}
