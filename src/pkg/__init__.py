@@ -18,3 +18,15 @@ if os.getenv('FLASK_DEBUG') == '1':
     from pyutils import com
     logger = getLogger(__name__)
     com.logging_to_console()
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# set the secret key
+# The secret key is used to cryptographically-sign (not encrypt) the cookies used for storing the session data on the \
+# client side.  This means that the user can see but can't change the cookie's values.
+# ----------------------------------------------------------------------------------------------------------------------
+import secrets
+from flask_wtf import CSRFProtect
+app.secret_key = secrets.token_urlsafe(16)
+# Flask-WTF requires this line
+csrf = CSRFProtect(app)
