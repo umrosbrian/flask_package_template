@@ -6,4 +6,9 @@ Because `.flaskenv` assigns and exports `FLASK_APP`, you just need to activate t
 
 ## blueprints
 
-The `flask_package_template/src/pkg/bp_1` directory is a sub-package that is a blueprint.  This directory can be copied and the `bp_1` replaced with a new name to create another blueprint.  In `flask_package_template/src/pkg/bp_1/__init__.py`, a Blueprint class object is created, which is then imported in `flask_package_template/src/pkg/__init__.py`.  `flask_package_template/src/pkg/main` is a blueprint too but in `/flask_package_template/src/pkg/__init__.py`, the blueprint is registered without a `url_prefix` parameter and value so the index of that blueprint is in `flask_package_template/src/pkg/templates` rather than in a subdirectory of that directory.
+The `flask_package_template/src/pkg/bp_1` directory is a sub-package that is a blueprint.  This directory can be copied and the `bp_1` replaced with a new name to create another blueprint.  The files in the directory will need to be modified using the new directory name, which can be done with `pyutils/recursively_replace.py --path <path to renamed bp_1 directory> --old_string bp_1 --new_string <new directory name>`.  In `flask_package_template/src/pkg/bp_1/__init__.py`, a Blueprint class object is created, which is then imported in `flask_package_template/src/pkg/__init__.py`.  
+`flask_package_template/src/pkg/main` is a blueprint too but in `/flask_package_template/src/pkg/__init__.py`, the blueprint is registered 
+without a 
+`url_prefix` parameter and value so the 
+index of that 
+blueprint is in `flask_package_template/src/pkg/templates` rather than in a subdirectory of that directory.
