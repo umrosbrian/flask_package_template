@@ -30,3 +30,22 @@ from flask_wtf import CSRFProtect
 app.secret_key = secrets.token_urlsafe(16)
 # Flask-WTF requires this line
 csrf = CSRFProtect(app)
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# check if form has been submitted and is valid
+# ----------------------------------------------------------------------------------------------------------------------
+from flask import flash
+
+def debug_form(form) -> bool:
+    """Check if a form has been submitted.  Perform validations.  Proceed if True, otherwise log and flash the
+    validation error(s)."""
+    if form.is_submitted():
+        logger.debug('POST')
+        if form.validate():
+            logger.debug('no errors on form')
+            return True
+        else:
+            logger.error(f"form.errors: {form.errors}")
+            flash(f"Error on a form: {form.errors}", 'error')
+            return False
