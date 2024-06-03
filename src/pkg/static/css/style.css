@@ -17,14 +17,20 @@ padding: 6px;
 text-align: center;
 }
 
-.dropzone {
-padding: 60x;
-border-radius: 10px;
-background-color: #fbfdff;
-margin-left: 15px;
-margin-bottom: 15px;
-margin-top: 15px;
-align: center;
+/* center paragraph */
+.center {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* flash() levels */
+.alert.error {
+  background-color: #FF92A4BF;
+}
+
+.alert.info {
+    background-color: #e6ffe6;
 }
 
 /* Make a link look like a button. */
